@@ -38,8 +38,10 @@ export default function RootLayout({ children }) {
         </li>
         <li>
           <Link
-            href="/services"
+          
+            href="#services"
             class="text-md font-semibold text-gray-300 hover:text-[#953ee2]"
+            scroll={true}
           >
             Services
           </Link>
