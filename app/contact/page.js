@@ -1,4 +1,45 @@
+"use client";
+import { useState } from "react"
+import axios from "axios";
+
+
 export default function Contactus(){
+      const [fname, setFname] = useState("");
+      const [lname, setLname] = useState("");
+      const [email, setEmail] = useState("");
+      const [phone, setPhone] = useState("");
+      const [message, setMessage] = useState("");
+      
+      console.log("Fname:", fname)
+      console.log("Lname:", lname)
+      console.log("Email:", email)
+      console.log("Phone:", phone)
+      console.log("Message:", message)
+
+      const handleSumit = async(event) => {
+        event.preventDefault();
+
+        const clientData = {
+          fname,
+          lname,
+          email,
+          phone,
+          message
+        }
+        console.log("Client:", clientData)
+
+        try {
+          const {data} = await axios({
+            url: "./app/api/data",
+            method: "POST",
+            data: "clientData"
+          });
+          console.log("Response back:", data)
+        } catch (error) {
+          console.log("Error:",error)
+        }
+
+      }
     return(
         <>
         <div>
@@ -47,6 +88,8 @@ export default function Contactus(){
                   </label>
                   <input
                     class="flex h-10 w-full rounded-md border border-gray-100 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                    value={fname}
+                    onChange={({target}) => setFname(target?.value)}
                     type="text"
                     id="first_name"
                     placeholder="First Name"
@@ -61,6 +104,8 @@ export default function Contactus(){
                   </label>
                   <input
                     class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                    value={lname}
+                    onChange={({target}) => setLname(target?.value)}
                     type="text"
                     id="last_name"
                     placeholder="Last Name"
@@ -76,6 +121,8 @@ export default function Contactus(){
                 </label>
                 <input
                   class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                  value={email}
+                    onChange={({target}) => setEmail(target?.value)}
                   type="text"
                   id="email"
                   placeholder="Email"
@@ -90,6 +137,8 @@ export default function Contactus(){
                 </label>
                 <input
                   class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                  value={phone}
+                    onChange={({target}) => setPhone(target?.value)}
                   type="tel"
                   id="phone_number"
                   placeholder="Phone number"
@@ -104,12 +153,15 @@ export default function Contactus(){
                 </label>
                 <textarea
                   class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                  value={message}
+                    onChange={({target}) => setMessage(target?.value)}
                   id="message"
                   placeholder="Leave us a message"
                   cols="3"
                 ></textarea>
               </div>
               <button
+              onClick={handleSumit}
                 type="button"
                 class="w-full rounded-md bg-mypurple px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-mypurple/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
