@@ -5,7 +5,7 @@ export default function Contactus(){
   
     
       
-      <div class="lg:hidden">
+      <div class="hidden lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -126,7 +126,7 @@ export default function Contactus(){
       </div>
     </div>
   </div>
-  <div class="rounded-lg bg-mypurple">
+  <div class="mt-[50px] rounded-lg bg-mypurple">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
       <div class="py-20">
         <div class="grid grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-2">
@@ -143,7 +143,7 @@ export default function Contactus(){
               </p>
               <p class="w-full text-base  text-white">Mon-Sat 9am to 5pm.</p>
               <p class="text-sm font-semibold text-gray-200">
-                #7810, Electronic City Phase-1, Bengaluru, Karnataka 560100 IN<br/>+91 7009646377
+                #7810, Electronic City Phase-1, Bengaluru, Karnataka 560100 IN
               </p>
             </div>
             <div class="flex flex-col space-y-2 pt-4 first:pt-0 lg:w-full">
