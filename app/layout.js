@@ -2,6 +2,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/react';
 
 const poppins = Poppins({
   weight: '200',
@@ -184,6 +185,8 @@ export default function RootLayout({ children }) {
   </div>
   <div className='mt-[20px] text-center text-[10px] text-grey-700'>Copyright ©2023 All rights reserved</div>
 </footer>
+{SpeedInsights}
+{Analytics}
 </body>
     </html>
     </>
