@@ -8,8 +8,8 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: 'Rahul Chauhan',
-  description: '',
+  title: 'Rchauhan',
+  description: 'All Web Services at One Place',
 }
 
 export default function RootLayout({ children }) {
