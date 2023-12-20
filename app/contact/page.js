@@ -143,7 +143,7 @@ export default function Contactus(){
               </p>
               <p class="w-full text-base  text-white">Mon-Sat 9am to 5pm.</p>
               <p class="text-sm font-semibold text-gray-200">
-                #7810, Electronic City Phase-1, Bengaluru, Karnataka 560100 IN
+                #7810, Electronic City Phase-1, Bengaluru, Karnataka 560100 IN<br/>+91 7009646377
               </p>
             </div>
             <div class="flex flex-col space-y-2 pt-4 first:pt-0 lg:w-full">
@@ -152,7 +152,7 @@ export default function Contactus(){
               </p>
               <p class="w-full text-base  text-white">Mon-Sat 9am to 5pm.</p>
               <p class="text-sm font-semibold text-gray-200">
-                Phase 7 Sector-61, Mohali, Punjab 160061 IN
+                Phase 7 Sector-61, Mohali, Punjab 160061 IN<br/>+91 7009646377
               </p>
             </div>
             

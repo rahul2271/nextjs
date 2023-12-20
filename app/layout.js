@@ -111,7 +111,7 @@ export default function RootLayout({ children }) {
           </li>
           <li class="p-5">
             <a class="font-medium text-gray-300 hover:text-mypurple" href="#">
-              Return Policy
+              Career
             </a>
           </li>
           <li class="p-5">
