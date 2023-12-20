@@ -100,24 +100,24 @@ export default function RootLayout({ children }) {
       <div class="ml-[80px] w-auto p-8">
         <ul class="mr-[70px] text-center md:m-5 md:flex flex-column md:flex-wrap items-center">
           <li class="p-5">
-            <a class="text-center font-medium text-gray-300 hover:text-mypurple" href="#">
+            <Link class="text-center font-medium text-gray-300 hover:text-mypurple" href="#">
               Privacy Policy
-            </a>
+            </Link>
           </li>
           <li class="p-5">
-            <a class="font-medium text-gray-300 hover:text-mypurple" href="#">
+            <Link class="font-medium text-gray-300 hover:text-mypurple" href="#">
               Terms of Service
-            </a>
+            </Link>
           </li>
           <li class="p-5">
-            <a class="font-medium text-gray-300 hover:text-mypurple" href="#">
+            <Link class="font-medium text-gray-300 hover:text-mypurple" href="#">
               Career
-            </a>
+            </Link>
           </li>
           <li class="p-5">
-            <a class="font-medium text-gray-300 hover:text-mypurple" href="/contact">
+            <Link class="font-medium text-gray-300 hover:text-mypurple" href="/contact">
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
