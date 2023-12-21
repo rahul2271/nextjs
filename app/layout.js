@@ -1,8 +1,6 @@
 import { Poppins } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from '@vercel/analytics/react';
 
 const poppins = Poppins({
   weight: '200',
@@ -20,20 +18,20 @@ export default function RootLayout({ children }) {
     
     <html lang="en">
       <body className={poppins.className}>    
-<header class=" relative w-full">
+<header className=" relative w-full">
     <img className='md:hidden mt-[20px] block ml-[140px] h-[70px] w-[70px]' src="logo.png" alt="LOGO"/>
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-    <div class="hidden md:block inline-flex items-center space-x-2">
+  <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+    <div className="hidden md:block inline-flex items-center space-x-2">
       <span>
         <img className='h-[70px] w-[70px]' src="logo.png" alt="LOGO"/>
       </span>
     </div>
-    <div class="mt-[10px] block ml-[50px] place-content-around lg:font-poppins lg:block">
-      <ul class="inline-flex space-x-8">
+    <div className="mt-[10px] block ml-[50px] place-content-around lg:font-poppins lg:block">
+      <ul className="inline-flex space-x-8">
         <li>
           <Link
             href="/"
-            class="text-md font-semibold text-gray-300 hover:text-[#953ee2]"
+            className="text-md font-semibold text-gray-300 hover:text-[#953ee2]"
           >
             Home
           </Link>
@@ -42,7 +40,7 @@ export default function RootLayout({ children }) {
           <Link
           
             href="#services"
-            class="text-md font-semibold text-gray-300 hover:text-[#953ee2]"
+            className="text-md font-semibold text-gray-300 hover:text-[#953ee2]"
             scroll={true}
           >
             Services
@@ -51,83 +49,66 @@ export default function RootLayout({ children }) {
         <li>
           <Link
             href="/about"
-            class="text-md font-semibold text-gray-300 hover:text-[#953ee2]"
+            className="text-md font-semibold text-gray-300 hover:text-[#953ee2]"
           >
             About
           </Link>
         </li>
       </ul>
     </div>
-    <Link href="/contact" class="hidden lg:block">
+    <Link href="/contact" className="hidden lg:block">
       <button
         type="button"
-        class="rounded-md bg-[#953ee2] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+        className="rounded-md bg-[#953ee2] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
       >
         Contact Us
       </button>
     </Link>
-    <div class="hidden">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="h-6 w-6 cursor-pointer"
-      >
-        <line x1="4" y1="12" x2="20" y2="12"></line>
-        <line x1="4" y1="6" x2="20" y2="6"></line>
-        <line x1="4" y1="18" x2="20" y2="18"></line>
-      </svg>
-    </div>
+    
   </div>
 </header>{children}
 {/* footer  */}
 <hr/>
-<footer class="relative overflow-hidden py-8">
-  <div class="container relative z-10 mx-auto px-4">
-    <div class="-m-8 flex flex-wrap items-center justify-between ">
-      <div class="w-auto p-8">
+<footer className="relative overflow-hidden py-8">
+  <div className="container relative z-10 mx-auto px-4">
+    <div className="-m-8 flex flex-wrap items-center justify-between ">
+      <div className="w-auto p-8">
         <a href="#">
-          <div class="ml-[110px] inline-flex items-center">
+          <div className="md:ml-[110px] inline-flex items-center">
             
-            <span class="hidden md:ml-[50px] md:block h-[70px] w-[70px]"><img src="./logo.png" alt="" /></span>
+            <span className="hidden md:ml-[50px] md:block h-[70px] w-[70px]"><img src="./logo.png" alt="" /></span>
           </div>
         </a>
       </div>
-      <div class="ml-[80px] w-auto p-8">
-        <ul class="mr-[70px] text-center md:m-5 md:flex flex-column md:flex-wrap items-center">
-          <li class="p-5">
-            <Link class="text-center font-medium text-gray-300 hover:text-mypurple" href="#">
+      <div className="ml-[80px]Name w-auto p-8">
+        <ul className="mr-[70px] text-center md:m-5 md:flex flex-column md:flex-wrap items-center">
+          <li className="p-5">
+            <Link className="text-center font-medium text-gray-300 hover:text-mypurple" href="#">
               Privacy Policy
             </Link>
           </li>
-          <li class="p-5">
-            <Link class="font-medium text-gray-300 hover:text-mypurple" href="#">
+          <li className="p-5">
+            <Link className="font-medium text-gray-300 hover:text-mypurple" href="#">
               Terms of Service
             </Link>
           </li>
-          <li class="p-5">
-            <Link class="font-medium text-gray-300 hover:text-mypurple" href="#">
+          <li className="p-5">
+            <Link className="font-medium text-gray-300 hover:text-mypurple" href="#">
               Career
             </Link>
           </li>
           <li class="p-5">
-            <Link class="font-medium text-gray-300 hover:text-mypurple" href="/contact">
+            <Link className="font-medium text-gray-300 hover:text-mypurple" href="/contact">
               Contact Us
             </Link>
           </li>
         </ul>
       </div>
-      <div class="ml-[80px] md:mr-[140px] w-auto p-8">
-        <div class="-m-1.5 flex flex-wrap">
-          <div class="w-auto p-1.5">
+      <div className="ml-[80px] md:mr-[140px] w-auto p-8">
+        <div className="-m-1.5 flex flex-wrap">
+          <div className="w-auto p-1.5">
             <a href="#">
-              <div class="flex h-[50px] bg-mypurple w-[50px] items-center justify-center rounded-full  border-gray-100 hover:border-white">
+              <div className="flex h-[50px] bg-mypurple w-[50px] items-center justify-center rounded-full  border-gray-100 hover:border-white">
                 <svg
                   width="20"
                   height="30"
@@ -143,9 +124,9 @@ export default function RootLayout({ children }) {
               </div>
             </a>
           </div>
-          <div class="w-auto p-1.5">
+          <div className="w-auto p-1.5">
             <a href="#">
-              <div class="flex h-[50px] bg-mypurple w-[50px] items-center justify-center rounded-full  border-gray-100 hover:border-white">
+              <div classNames="flex h-[50px] bg-mypurple w-[50px] items-center justify-center rounded-full  border-gray-100 hover:border-white">
                 <svg
                   width="20"
                   height="30"
@@ -161,9 +142,9 @@ export default function RootLayout({ children }) {
               </div>
             </a>
           </div>
-          <div class="w-auto p-1.5">
+          <div className="w-auto p-1.5">
             <a href="#">
-              <div class="flex h-[50px] bg-mypurple w-[50px] items-center justify-center rounded-full  border-gray-100 hover:border-white">
+              <div className="flex h-[50px] bg-mypurple w-[50px] items-center justify-center rounded-full  border-gray-100 hover:border-white">
                 <svg
                   width="20"
                   height="30"
@@ -185,8 +166,6 @@ export default function RootLayout({ children }) {
   </div>
   <div className='mt-[20px] text-center text-[10px] text-grey-700'>Copyright ©2023 All rights reserved</div>
 </footer>
-{SpeedInsights}
-{Analytics}
 </body>
     </html>
     </>

@@ -2,12 +2,12 @@ import Link from "next/link"
 export default function Mobilenav(){
     return(
         <>
-        <div class="">
-      <ul class="">
+        <div className="">
+      <ul className="">
         <li>
           <Link
             href="/"
-            class="text-lg font-semibold text-gray-300 hover:text-[#953ee2]"
+            className="text-lg font-semibold text-gray-300 hover:text-[#953ee2]"
           >
             Home
           </Link>
@@ -15,7 +15,7 @@ export default function Mobilenav(){
         <li>
           <Link
             href="/services"
-            class="text-lg font-semibold text-gray-300 hover:text-[#953ee2]"
+            className="text-lg font-semibold text-gray-300 hover:text-[#953ee2]"
           >
             Services
           </Link>
@@ -23,7 +23,7 @@ export default function Mobilenav(){
         <li>
           <Link
             href="/about"
-            class="text-lg font-semibold text-gray-300 hover:text-[#953ee2]"
+            className="text-lg font-semibold text-gray-300 hover:text-[#953ee2]"
           >
             About
           </Link>

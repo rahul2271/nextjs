@@ -1,144 +1,90 @@
 "use client";
 import { useState } from "react"
+// import fetch from "node-fetch";
 import axios from "axios";
+import Cors from 'cors';
 
 
-export default function Contactus(){
-      const [fname, setFname] = useState("");
-      const [lname, setLname] = useState("");
-      const [email, setEmail] = useState("");
-      const [phone, setPhone] = useState("");
-      const [message, setMessage] = useState("");
-      
-      console.log("Fname:", fname)
-      console.log("Lname:", lname)
-      console.log("Email:", email)
-      console.log("Phone:", phone)
-      console.log("Message:", message)
 
-      const handleSumit = async(event) => {
-        event.preventDefault();
-
-        const clientData = {
-          fname,
-          lname,
-          email,
-          phone,
-          message
-        }
-        console.log("Client:", clientData)
-
-        try {
-          const {data} = await axios({
-            url: "./app/api/data",
-            method: "POST",
-            data: "clientData"
-          });
-          console.log("Response back:", data)
-        } catch (error) {
-          console.log("Error:",error)
-        }
-
-      }
+export default function Form(){
+  
     return(
         <>
-        <div>
+       
   
-    
-      
-      <div class="hidden lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="h-6 w-6 cursor-pointer"
-        >
-          <line x1="4" y1="12" x2="20" y2="12"></line>
-          <line x1="4" y1="6" x2="20" y2="6"></line>
-          <line x1="4" y1="18" x2="20" y2="18"></line>
-        </svg>
-      </div>
-    </div>
-  
-  <div class="mx-auto max-w-7xl px-4">
-    <div class="mx-auto max-w-7xl py-12 md:py-24">
-      <div class="grid items-center justify-items-center gap-x-4 gap-y-10 lg:grid-cols-2">
-        <div class="flex items-center justify-center">
-          <div class="px-2 md:px-12">
-            <p class="text-2xl font-bold text-gray-100 md:text-4xl">
+  <div className="mx-auto max-w-7xl px-4">
+    <div className="mx-auto max-w-7xl py-12 md:py-24">
+      <div className="grid items-center justify-items-center gap-x-4 gap-y-10 lg:grid-cols-2">
+        <div className="flex items-center justify-center">
+          <div className="px-2 md:px-12">
+            <p className="text-2xl font-bold text-gray-100 md:text-4xl">
               Get in touch
             </p>
-            <p class="mt-4 text-lg text-gray-300">
+            <p className="mt-4 text-lg text-gray-300">
               Our friendly team would love to hear from you.
             </p>
-            <form action="" class="mt-8 space-y-4">
-              <div class="grid w-full gap-y-4 md:gap-x-4 lg:grid-cols-2">
-                <div class="grid w-full  items-center gap-1.5">
+            <form onSubmit={handleSubmit} action="" className="mt-8 space-y-4">
+              <div className="grid w-full gap-y-4 md:gap-x-4 lg:grid-cols-2">
+                <div className="grid w-full  items-center gap-1.5">
                   <label
-                    class="text-sm font-medium leading-none text-gray-100 peer-disabled:cursor-not-allowed peer-disabled:opacity-100"
+                    className="text-sm font-medium leading-none text-gray-100 peer-disabled:cursor-not-allowed peer-disabled:opacity-100"
                     for="first_name"
                   >
                     First Name
                   </label>
                   <input
-                    class="flex h-10 w-full rounded-md border border-gray-100 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                    value={fname}
-                    onChange={({target}) => setFname(target?.value)}
+                    className="flex h-10 w-full rounded-md border border-gray-100 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                    // value={formData.name}
+                    // onChange={handleChange}
                     type="text"
                     id="first_name"
                     placeholder="First Name"
                   />
                 </div>
-                <div class="grid w-full  items-center gap-1.5">
+                <div className="grid w-full  items-center gap-1.5">
                   <label
-                    class="text-sm font-medium leading-none text-gray-100 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    className="text-sm font-medium leading-none text-gray-100 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     for="last_name"
                   >
                     Last Name
                   </label>
                   <input
-                    class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                    value={lname}
-                    onChange={({target}) => setLname(target?.value)}
+                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                    // value={lname}
+                    // onChange={({target}) => setLname(target?.value)}
                     type="text"
                     id="last_name"
                     placeholder="Last Name"
                   />
                 </div>
               </div>
-              <div class="grid w-full  items-center gap-1.5">
+              <div className="grid w-full  items-center gap-1.5">
                 <label
-                  class="text-sm font-medium leading-none text-gray-100 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  className="text-sm font-medium leading-none text-gray-100 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   for="email"
                 >
                   Email
                 </label>
                 <input
-                  class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                  value={email}
-                    onChange={({target}) => setEmail(target?.value)}
+                  className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                  // value={formData.email}
+                    // onChange={handleChange}
                   type="text"
                   id="email"
                   placeholder="Email"
                 />
               </div>
-              <div class="grid w-full  items-center gap-1.5">
+              <div className="grid w-full  items-center gap-1.5">
                 <label
-                  class="text-sm font-medium leading-none text-gray-100 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  className="text-sm font-medium leading-none text-gray-100 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   for="phone_number"
                 >
                   Phone number
                 </label>
                 <input
-                  class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                  value={phone}
-                    onChange={({target}) => setPhone(target?.value)}
+                  className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                  // value={phone}
+                    // onChange={({target}) => setPhone(target?.value)}
                   type="tel"
                   id="phone_number"
                   placeholder="Phone number"
@@ -146,23 +92,23 @@ export default function Contactus(){
               </div>
               <div class="grid w-full  items-center gap-1.5">
                 <label
-                  class="text-sm font-medium leading-none text-gray-100 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  className="text-sm font-medium leading-none text-gray-100 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   for="message"
                 >
                   Message
                 </label>
                 <textarea
-                  class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                  value={message}
-                    onChange={({target}) => setMessage(target?.value)}
+                  className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                  // value={message}
+                    // onChange={({target}) => setMessage(target?.value)}
                   id="message"
                   placeholder="Leave us a message"
                   cols="3"
                 ></textarea>
               </div>
               <button
-              onClick={handleSumit}
-                type="button"
+              // onClick={handleSumit}
+                type="submit"
                 class="w-full rounded-md bg-mypurple px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-mypurple/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
                 Send Message
@@ -170,40 +116,40 @@ export default function Contactus(){
             </form>
           </div>
         </div>
-        <img
+        <img className="h-[550px] w-[400px] rounded-lg"
           alt="Contact us"
           class="hidden max-h-full w-full rounded-lg object-cover lg:block"
-          src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fGhhcHB5JTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+          src="./mypic.jpg"
         />
       </div>
     </div>
   </div>
-  <div class="mt-[50px] rounded-lg bg-mypurple">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <div class="py-20">
-        <div class="grid grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-2">
-          <div class="space-y-4">
-            <p class="w-full text-4xl font-extrabold text-gray-100">Our Offices</p>
-            <p class="w-full text-lg text-gray-100">
+  <div className="mt-[50px] rounded-lg bg-mypurple">
+    <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="py-20">
+        <div className="grid grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-2">
+          <div className="space-y-4">
+            <p className="w-full text-4xl font-extrabold text-gray-100">Our Offices</p>
+            <p className="w-full text-lg text-gray-100">
               Find us at these locations.
             </p>
           </div>
-          <div class="space-y-4 divide-y-2">
-            <div class="flex flex-col space-y-2 pt-4 first:pt-0 lg:w-full">
-              <p class="w-full text-xl font-semibold  text-gray-200">
+          <div className="space-y-4 divide-y-2">
+            <div className="flex flex-col space-y-2 pt-4 first:pt-0 lg:w-full">
+              <p className="w-full text-xl font-semibold  text-gray-200">
                 Bengaluru office
               </p>
-              <p class="w-full text-base  text-white">Mon-Sat 9am to 5pm.</p>
-              <p class="text-sm font-semibold text-gray-200">
+              <p className="w-full text-base  text-white">Mon-Sat 9am to 5pm.</p>
+              <p className="text-sm font-semibold text-gray-200">
                 #7810, Electronic City Phase-1, Bengaluru, Karnataka 560100 IN
               </p>
             </div>
-            <div class="flex flex-col space-y-2 pt-4 first:pt-0 lg:w-full">
-              <p class="w-full text-xl font-semibold  text-gray-200">
+            <div className="flex flex-col space-y-2 pt-4 first:pt-0 lg:w-full">
+              <p className="w-full text-xl font-semibold  text-gray-200">
                 Chandigarh office
               </p>
-              <p class="w-full text-base  text-white">Mon-Sat 9am to 5pm.</p>
-              <p class="text-sm font-semibold text-gray-200">
+              <p className="w-full text-base  text-white">Mon-Sat 9am to 5pm.</p>
+              <p className="text-sm font-semibold text-gray-200">
                 Phase 7 Sector-61, Mohali, Punjab 160061 IN<br/>+91 7009646377
               </p>
             </div>
